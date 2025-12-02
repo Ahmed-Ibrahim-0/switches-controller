@@ -1,0 +1,149 @@
+.switch-details-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  letter-spacing: 1.1px;
+}
+
+.switch-details-container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: var(--primary);
+}
+
+.switch-card {
+  width: 600px; /* wider card */
+  padding: 24px;
+  border-radius: 15px;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* more obvious shadow */
+}
+
+/* Header row (status + actions) */
+.switch-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Status styling */
+.status-text {
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-transform: capitalize;
+}
+
+.status-sent_for_fix {
+  background-color: var(--sent-for-fix);
+  color: #333;
+}
+
+.status-faulty_not_sent {
+  background-color: var(--faulty-not-sent);
+  color: #fff;
+}
+
+.status-fixed {
+  background-color: var(--fixed);
+  color: #fff;
+}
+
+/* Info section */
+.switch-info {
+  margin-bottom: 20px;
+}
+.switch-info p {
+  margin: 6px 0;
+  line-height: 1.4;
+}
+.switch-info p strong {
+  text-transform: capitalize;
+}
+
+/* Actions (inside the header row now) */
+.switch-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.action-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.update-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* === Loading Spinner === */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  color: var(--primary);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Circular spinner */
+.loader {
+  border: 4px solid rgba(0, 59, 109, 0.2);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16px;
+}
+
+/* Text */
+.loading-state p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--primary);
+}
+
+/* === Animations === */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

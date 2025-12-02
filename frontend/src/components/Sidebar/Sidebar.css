@@ -1,0 +1,84 @@
+/* === Sidebar Container === */
+aside {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* full viewport height */
+  width: 18%; /* same as before */
+  background-color: var(--primary);
+  color: var(--text-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100; /* make sure it's above content */
+}
+
+/* === Header (Logo/Title) === */
+aside > div:first-child {
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  letter-spacing: 0.5px;
+}
+
+/* === Navigation Section === */
+nav {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  margin-top: 0.5rem;
+}
+
+/* Each NavLink */
+nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Hover state */
+nav a:hover {
+  background-color: var(--secondary);
+}
+
+/* Active route */
+nav a.active {
+  background-color: var(--light);
+  color: var(--primary);
+}
+
+/* === Footer === */
+aside > div:last-child {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom-right-radius: 1rem;
+  font-weight: bold;
+}
+.sidebar__footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.sidebar__footer:hover {
+  background-color: #ce0c1f; /* Bootstrap danger red */
+  color: var(--text-light);
+}

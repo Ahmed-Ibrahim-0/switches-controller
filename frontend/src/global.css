@@ -1,0 +1,49 @@
+/* === Global Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Color Variables (Theme) === */
+:root {
+  --primary: #003b6d; /* main dark blue */
+  --secondary: #6699cc; /* lighter accent blue */
+  --light: #ebedf3; /* page background */
+  --text-light: #ffffff; /* white text */
+  --text-dark: #222222; /* dark text */
+  --faulty-not-sent: #dc3545;
+  --sent-for-fix: #ffc107;
+  --fixed: #28a745;
+}
+
+/* === Base Typography & Background === */
+body {
+  font-family: "Segoe UI", sans-serif;
+  background-color: var(--light);
+  color: var(--text-dark);
+  min-height: 100vh;
+}
+
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+  width: 10px; /* adjust thickness */
+}
+
+/* Track (background of scrollbar) */
+::-webkit-scrollbar-track {
+  background: #f0f0f0; /* light gray */
+  border-radius: 5px;
+}
+
+/* Thumb (the draggable part) */
+::-webkit-scrollbar-thumb {
+  background-color: #6699cc; /* use your --secondary color */
+  border-radius: 5px;
+  border: 2px solid #f0f0f0; /* space around thumb */
+}
+
+/* Hover effect on thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #003b6d; /* --primary color */
+}

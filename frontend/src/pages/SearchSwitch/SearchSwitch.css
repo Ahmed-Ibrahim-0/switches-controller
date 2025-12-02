@@ -1,0 +1,128 @@
+.search-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5rem;
+  color: var(--text-dark);
+}
+
+.search-page h2 {
+  font-size: 1.9rem;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+/* === Dynamic Header Colors === */
+.search-page h2.key {
+  color: var(--primary);
+}
+
+.search-page h2.serial {
+  color: var(--secondary);
+}
+
+/* === Type Buttons === */
+.search-type-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.type-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  letter-spacing: 1.1px;
+  border-radius: 25px;
+  border: 2px solid transparent;
+  background-color: var(--light);
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+}
+
+/* === Hover & Active States === */
+.type-btn:hover,
+.type-btn.active.key {
+  background-color: var(--primary);
+  color: var(--text-light);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.type-btn.active.serial,
+.type-btn:hover.serial {
+  background-color: var(--secondary);
+  color: var(--text-light);
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+/* === Search Bar === */
+.search-bar {
+  position: relative;
+  width: 60%;
+  max-width: 600px;
+}
+
+/* Default input styling */
+.search-bar input {
+  width: 100%;
+  padding: 14px 60px 14px 20px;
+  border: 2px solid var(--primary);
+  border-radius: 50px;
+  font-size: 1.1rem;
+  outline: none;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Focus shadow */
+.search-bar input:focus {
+  box-shadow: 0 0 10px rgba(0, 59, 109, 0.4);
+}
+
+/* === Input border changes dynamically by mode === */
+.search-bar.key input {
+  border-color: var(--primary);
+}
+
+.search-bar.key input:focus {
+  box-shadow: 0 0 10px var(--primary);
+}
+
+.search-bar.serial input {
+  border-color: var(--secondary);
+}
+
+.search-bar.serial input:focus {
+  box-shadow: 0 0 10px var(--secondary);
+}
+
+/* === Search Button === */
+.search-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20%;
+  border: none;
+  border-radius: 0 50px 50px 0;
+  color: var(--text-light);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-btn.key {
+  background-color: var(--primary);
+}
+
+.search-btn.serial {
+  background-color: var(--secondary);
+}
+
+.search-btn:hover {
+  opacity: 0.9;
+}

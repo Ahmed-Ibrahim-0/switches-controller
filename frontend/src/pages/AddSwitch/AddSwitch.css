@@ -1,0 +1,321 @@
+/* === Page Layout === */
+.add-switch-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+  background-color: var(--light);
+}
+
+/* === Page Title === */
+.add-switch-page h2 {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* === Form Container === */
+.form-container {
+  width: 85%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* === Status Selector === */
+.status-selector {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0;
+}
+
+/* --- Base Button --- */
+.status-tab {
+  padding: 12px 20px;
+  border: none;
+  background-color: #f5f5f5;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  color: var(--text-dark);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+/* --- Active State (colored by status) --- */
+.status-tab.active.sent-for-fix {
+  background-color: var(--sent-for-fix);
+  outline: solid 1px var(--sent-for-fix);
+  box-shadow: 0 0 5px var(--sent-for-fix);
+  color: #fff;
+}
+.status-tab.active.fixed {
+  background-color: var(--fixed);
+  outline: solid 1px var(--fixed);
+  box-shadow: 0 0 5px var(--fixed);
+  color: #fff;
+}
+.status-tab.active.faulty-not-sent {
+  background-color: var(--faulty-not-sent);
+  outline: solid 1px var(--faulty-not-sent);
+  box-shadow: 0 0 5px var(--faulty-not-sent);
+  color: #fff;
+}
+
+/* --- Inactive Tabs (muted gray) --- */
+.status-tab:not(.active) {
+  background-color: #f0f0f0;
+  color: #888;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+/* === Form === */
+.add-switch-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 400px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0 0 15px 15px;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* --- Form Glow by Status --- */
+.add-switch-form.shadow-sent-for-fix {
+  border: solid 1px var(--sent-for-fix);
+  box-shadow: 0 0 8px var(--sent-for-fix);
+}
+.add-switch-form.shadow-fixed {
+  border: solid 1px var(--fixed);
+  box-shadow: 0 0 8px var(--fixed);
+}
+.add-switch-form.shadow-faulty-not-sent {
+  border: solid 1px var(--faulty-not-sent);
+  box-shadow: 0 0 8px var(--faulty-not-sent);
+}
+
+/* === Input Layout (2 columns) === */
+/* === Input Layout (max 3 columns) === */
+.form-group-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem 1.5rem;
+  width: 100%;
+  max-width: calc(3 * 260px + 3 * 1.5rem); /* ensures no more than 3 columns */
+}
+
+@media (max-width: 1024px) {
+  .form-group-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+  }
+}
+
+@media (max-width: 600px) {
+  .form-group-container {
+    grid-template-columns: 1fr; /* 1 column on small screens */
+  }
+}
+
+/* === Input Groups === */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--primary);
+}
+
+/* === Base Input === */
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid var(--secondary);
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* --- Dynamic Input Borders (match status color) --- */
+.add-switch-form.shadow-sent-for-fix input {
+  border-color: var(--sent-for-fix);
+}
+.add-switch-form.shadow-fixed input {
+  border-color: var(--fixed);
+}
+.add-switch-form.shadow-faulty-not-sent input {
+  border-color: var(--faulty-not-sent);
+}
+
+/* --- Input Focus Glow --- */
+.add-switch-form.shadow-sent-for-fix input:focus {
+  border-color: var(--sent-for-fix);
+  box-shadow: 0 0 5px var(--sent-for-fix);
+}
+.add-switch-form.shadow-fixed input:focus {
+  border-color: var(--fixed);
+  box-shadow: 0 0 5px var(--fixed);
+}
+.add-switch-form.shadow-faulty-not-sent input:focus {
+  border-color: var(--faulty-not-sent);
+  box-shadow: 0 0 5px var(--faulty-not-sent);
+}
+
+/* === Submit Button === */
+.submit-btn {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+/* --- Button color by status --- */
+.shadow-sent-for-fix .submit-btn {
+  background-color: var(--sent-for-fix);
+}
+.shadow-fixed .submit-btn {
+  background-color: var(--fixed);
+}
+.shadow-faulty-not-sent .submit-btn {
+  background-color: var(--faulty-not-sent);
+}
+
+/* --- Hover darken effect --- */
+.submit-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* === Spinner inside submit button === */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Custom Dropdown Wrapper === */
+.custom-dropdown {
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid var(--secondary);
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #fff;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.custom-dropdown.disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* === Dynamic Border by Status === */
+.add-switch-form.shadow-sent-for-fix .custom-dropdown {
+  border-color: var(--sent-for-fix);
+}
+.add-switch-form.shadow-fixed .custom-dropdown {
+  border-color: var(--fixed);
+}
+.add-switch-form.shadow-faulty-not-sent .custom-dropdown {
+  border-color: var(--faulty-not-sent);
+}
+
+/* === Selected Option === */
+.selected-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === Arrow === */
+.arrow {
+  transition: transform 0.3s ease;
+}
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* === Options List === */
+.options-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-top: 4px;
+  padding: 0;
+  list-style: none;
+  border: 1px solid var(--secondary);
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  animation: fadeIn 0.2s ease;
+}
+
+/* === Option Item === */
+.options-list li {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.options-list li:hover {
+  background-color: #f0f0f0;
+}
+.options-list li.active {
+  font-weight: 600;
+  background-color: #e0e0e0;
+}
+
+/* === Focus Glow for Wrapper === */
+.custom-dropdown:focus {
+  box-shadow: 0 0 5px var(--primary);
+}
+
+/* === Animation === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.required-star {
+  color: red;
+  margin-left: 6px;
+  font-weight: bold;
+}

@@ -1,0 +1,111 @@
+.overview-container {
+  padding: 2rem;
+}
+
+.overview-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  text-align: center;
+  color: var(--primary);
+}
+
+.overview-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.overview-card {
+  flex: 1 1 200px;
+  padding: 1rem;
+  border-radius: 15px;
+  background-color: white;
+  border: 2px solid transparent;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.overview-card:hover {
+  transform: scale(1.03);
+  border-color: currentColor;
+}
+
+.overview-card h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.overview-card p {
+  text-transform: capitalize;
+  font-size: 1.05rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.overview-total {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+.overview-error {
+  color: red;
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+/* ========================= */
+/*       NOTES SECTION       */
+/* ========================= */
+.overview-notes {
+  margin-top: 2.5rem;
+  background: white;
+  padding: 1.2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid var(--secondary);
+}
+
+.overview-notes h2 {
+  font-size: 1.4rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.overview-notes ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Individual note item imported from component */
+.note-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 16px;
+  background: var(--light);
+  padding: 10px 12px;
+  border-radius: 8px;
+  border-left: 4px solid var(--secondary);
+}
+
+.note-view-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.note-view-btn:hover {
+  opacity: 0.8;
+}
